@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="description"
+    content="Portfolio d'Alfousseyny Diallo, étudiant en  Informatique, parcours Systèmes d'Information, à l'Université Gaston Berger au Sénégal. Découvrez ses projets en Machine Learning, Deep Learning et programmation."
+>
+
+<meta name="author" content="Alfousseyny Diallo">
+<meta name="theme-color" content="#F6F8F5">
+<meta name="robots" content="index, follow">
+
+<title>Alfousseyny Diallo | Portfolio informatique et IA</title>
+
+<!-- Polices Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Feuille de style -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Favicon -->
+<link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B7A3E'/%3E%3Ctext x='50' y='65' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EAD%3C/text%3E%3C/svg%3E"
+>
+
+<!-- Prévention du flash de thème -->
+<script>
+    (function () {
+        try {
+            const savedTheme = localStorage.getItem("portfolio-theme");
+
+            if (savedTheme === "light" || savedTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            } else if (
+                window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+            ) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        } catch (error) {
+            // Le site conserve son thème par défaut.
+        }
+    })();
+</script>
+
+<!-- JavaScript principal -->
+<script src="js/script.js" defer></script>
+
+</head>
+
+<body id="top">
+
+<!-- Lien d'accessibilité -->
+<a href="#main-content" class="skip-link">
+    Passer au contenu principal
+</a>
+
+<!-- NAVIGATION -->
+<header class="site-header">
+
+    <div class="wrap navbar">
+
+        <a
+            href="#accueil"
+            class="brand"
+            aria-label="Alfousseyny Diallo - Accueil"
+        >
+            <span class="brand-bracket" aria-hidden="true">&lt;</span>
+            <span>Alfousseyny<span class="brand-dot">.</span></span>
+            <span class="brand-bracket" aria-hidden="true">/&gt;</span>
+        </a>
+
+        <!-- Menu mobile -->
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation principale -->
+        <nav
+            class="main-navigation"
+            id="main-navigation"
+            aria-label="Navigation principale"
+        >
+            <ul class="nav-links" id="nav-links">
+                <li>
+                    <a href="#accueil" class="nav-link active" aria-current="page">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="#apropos" class="nav-link">À propos</a>
+                </li>
+                <li>
+                    <a href="#parcours" class="nav-link">Parcours</a>
+                </li>
+                <li>
+                    <a href="#objectifs" class="nav-link">IA &amp; Recherche</a>
+                </li>
+                <li>
+                    <a href="#projets" class="nav-link">Projets</a>
+                </li>
+                <li>
+                    <a href="#competences" class="nav-link">Compétences</a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link nav-contact-mobile">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Actions de navigation -->
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                class="theme-toggle"
+                id="theme-toggle"
+                aria-label="Activer le mode sombre"
+                aria-pressed="false"
+                title="Changer de thème"
+            >
+                <!-- Icône lune -->
+                <svg
+                    id="moon-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.5 6.5 0 0 0 8.268 8.268c.344-.215.829-.003.803.397z"/>
+                </svg>
+
+                <!-- Icône soleil -->
+                <svg
+                    id="sun-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    hidden
+                >
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="m4.93 4.93 1.42 1.42"/>
+                    <path d="m17.65 17.65 1.42 1.42"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+                    <path d="m6.35 17.65-1.42 1.42"/>
+                    <path d="m19.07 4.93-1.42 1.42"/>
+                </svg>
+            </button>
+
+            <a href="#contact" class="nav-contact">
+                Me contacter
+                <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- CONTENU PRINCIPAL -->
+<main id="main-content">
+
+    <!-- 1. ACCUEIL -->
+    <section
+        id="accueil"
+        class="hero section"
+        aria-labelledby="hero-title"
+    >
+        <div class="wrap hero-layout">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    INFORMATIQUE · INTELLIGENCE ARTIFICIELLE
+                </p>
+
+                <h1 id="hero-title">
+                    Je suis
+                    <span class="hero-name">Alfousseyny</span>
+                    <span class="hero-name">
+                        Diallo<span class="brand-dot">.</span>
+                    </span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Étudiant en informatique
+                    <span class="separator" aria-hidden="true">·</span>
+                    Futur spécialiste en intelligence artificielle
+                </p>
+
+                <p class="hero-description">
+                    Je développe progressivement mes compétences en
+                    Machine Learning et en Deep Learning à travers
+                    des projets concrets. Je m'intéresse particulièrement
+                    à la vision par ordinateur, à l'analyse d'images
+                    et à la recherche en intelligence artificielle.
+                </p>
+
+                <div class="btns">
+                    <a href="#projets" class="btn btn-primary">
+                        Découvrir mes projets
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="#apropos" class="btn btn-secondary">
+                        En savoir plus
+                    </a>
+                </div>
+
+                <div class="hero-bottom">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <p>Saint-Louis, Sénégal</p>
+                    <span class="hero-divider" aria-hidden="true">|</span>
+                    <p>Université Gaston Berger</p>
+                </div>
+
+            </div>
+
+            <!-- Illustration CSS de l'intelligence artificielle -->
+            <div
+                class="hero-visual"
+                role="img"
+                aria-label="Illustration de l'intelligence artificielle, du Machine Learning et de la vision par ordinateur"
+            >
+                <div class="visual-orbit orbit-one" aria-hidden="true"></div>
+                <div class="visual-orbit orbit-two" aria-hidden="true"></div>
+
+                <div class="visual-core">
+                    <span class="visual-symbol">AI</span>
+                    <span class="visual-caption">Artificial Intelligence</span>
+                </div>
+
+                <div class="floating-card floating-card-top">
+                    <span class="floating-icon">01</span>
+                    <span>Machine Learning</span>
+                </div>
+
+                <div class="floating-card floating-card-bottom">
+                    <span class="floating-icon">02</span>
+                    <span>Computer Vision</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 2. À PROPOS -->
+    <section
+        id="apropos"
+        class="section"
+        aria-labelledby="about-title"
+    >
+        <div class="wrap">
+
+            <div class="section-heading">
+                <p class="eyebrow">QUI SUIS-JE ?</p>
+
+                <h2 id="about-title">
+                    À propos de <span>moi</span>
+                </h2>
+
+                <p class="section-intro">
+                    Un parcours informatique, une passion pour
+                    l'intelligence artificielle et une volonté
+                    constante d'apprendre.
+                </p>
+            </div>
+
+            <div class="about-grid">
+
+                <article class="content-card">
+                    <div class="card-index">01 / PROFIL</div>
+                    <h3>Mon parcours</h3>
+
+                    <p>
+                        Je suis étudiant en  Informatique,
+                        parcours Systèmes d'Information, à l'Université
+                        Gaston Berger de Saint-Louis, au Sénégal.
+                    </p>
+
+                    <p>
+                        Ma formation m'a permis de développer des bases
+                        en programmation, en bases de données, en
+                        conception de systèmes informatiques et en
+                        analyse de données.
+                    </p>
+                </article>
+
+                <article class="content-card">
+                    <div class="card-index">02 / AMBITION</div>
+                    <h3>Ma direction</h3>
+
+                    <p>
+                        Je souhaite approfondir mes connaissances
+                        en intelligence artificielle, notamment
+                        en Machine Learning, en Deep Learning et
+                        en vision par ordinateur.
+                    </p>
+
+                    <p>
+                        Mon objectif est de comprendre les fondements
+                        mathématiques des modèles, de réaliser des
+                        projets solides et de progresser vers la
+                        recherche et le développement en IA.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PARCOURS ACADÉMIQUE -->
+    <section
+        id="parcours"
+        class="section section-muted"
+        aria-labelledby="education-title"
+    >
+        <div class="wrap">
+
+            <div class="section-heading">
+                <p class="eyebrow">FORMATION</p>
+
+                <h2 id="education-title">
+                    Mon parcours <span>académique</span>
+                </h2>
+
+                <p class="section-intro">
+                    Les principales étapes de mon parcours universitaire.
+                </p>
+            </div>
+
+            <ol class="timeline">
+
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+
+                    <div class="timeline-card">
+                        <span class="timeline-label">Formation initiale</span>
+                        <h3>Baccalauréat</h3>
+
+                        <p>
+                            Obtention du baccalauréat avant mon entrée
+                            dans l'enseignement supérieur.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+
+                    <div class="timeline-card">
+                        <span class="timeline-label">Formation universitaire</span>
+                        <h3>Mathématiques appliquées</h3>
+
+                        <p>
+                            Formation initiale en mathématiques
+                            appliquées et sciences sociales, suivie
+                            d'un approfondissement en mathématiques
+                            appliquées avant mon orientation vers
+                            l'informatique.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="timeline-item">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+
+                    <div class="timeline-card">
+                        <span class="timeline-label">Université Gaston Berger</span>
+                        <h3>Licence Informatique — Systèmes d'Information</h3>
+
+                        <p>
+                            Formation en programmation, bases de données,
+                            systèmes d'information et analyse de données
+                            à l'Université Gaston Berger de Saint-Louis.
+                        </p>
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+    </section>
+
+    <!-- 4. IA ET RECHERCHE -->
+    <section
+        id="objectifs"
+        class="section"
+        aria-labelledby="research-title"
+    >
+        <div class="wrap">
+
+            <div class="section-heading">
+                <p class="eyebrow">IA &amp; RECHERCHE</p>
+
+                <h2 id="research-title">
+                    Ce que je veux <span>explorer</span>
+                </h2>
+
+                <p class="section-intro">
+                    Les domaines que je souhaite approfondir
+                    dans mon parcours en intelligence artificielle.
+                </p>
+            </div>
+
+            <div class="research-grid">
+
+                <article class="research-card">
+                    <span class="research-number" aria-hidden="true">01</span>
+                    <div class="research-icon" aria-hidden="true">ML</div>
+                    <h3>Machine Learning</h3>
+
+                    <p>
+                        Étudier les algorithmes d'apprentissage
+                        automatique, la préparation des données,
+                        l'évaluation des modèles et leur capacité
+                        à généraliser sur de nouvelles données.
+                    </p>
+
+                    <span class="research-tag">Apprentissage automatique</span>
+                </article>
+
+                <article class="research-card">
+                    <span class="research-number" aria-hidden="true">02</span>
+                    <div class="research-icon" aria-hidden="true">DL</div>
+                    <h3>Deep Learning</h3>
+
+                    <p>
+                        Approfondir les réseaux de neurones,
+                        la propagation avant, la rétropropagation,
+                        les fonctions d'activation et l'optimisation
+                        des modèles.
+                    </p>
+
+                    <span class="research-tag">Réseaux de neurones</span>
+                </article>
+
+                <article class="research-card">
+                    <span class="research-number" aria-hidden="true">03</span>
+                    <div class="research-icon" aria-hidden="true">CV</div>
+                    <h3>Vision par ordinateur</h3>
+
+                    <p>
+                        Explorer les méthodes d'apprentissage
+                        permettant aux machines d'analyser,
+                        de reconnaître et d'interpréter des images.
+                    </p>
+
+                    <span class="research-tag">Analyse d'images</span>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROJETS -->
+    <section
+        id="projets"
+        class="section section-muted"
+        aria-labelledby="projects-title"
+    >
+        <div class="wrap">
+
+            <div class="section-heading">
+                <p class="eyebrow">MES RÉALISATIONS</p>
+
+                <h2 id="projects-title">
+                    Des projets pour
+                    <span>apprendre et construire</span>
+                </h2>
+
+                <p class="section-intro">
+                    Des projets personnels et universitaires qui
+                    illustrent ma progression en Machine Learning,
+                    en Deep Learning, en programmation et en
+                    développement logiciel.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Projet 1 : maladies cardiaques -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/heard.png"
+                            alt="Visualisation des résultats du projet de classification des maladies cardiaques"
+                            loading="lazy"
+                            width="800"
+                            height="450"
+                        >
+                    </div>
+
+                    <div class="project-top">
+                        <span class="project-number">PROJET 01</span>
+                        <span class="project-category">Machine Learning</span>
+                    </div>
+
+                    <h3>Classification des maladies cardiaques</h3>
+
+                    <p>
+                        Développement d'un modèle de classification
+                        à partir de données médicales. Le projet
+                        comprend la préparation des données,
+                        l'entraînement de modèles, la validation
+                        croisée et l'évaluation des performances.
+                    </p>
+
+                    <div class="tags" aria-label="Technologies utilisées">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/alfouDiallo99/heart-disease-classification"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Voir le projet de classification des maladies cardiaques sur GitHub"
+                    >
+                        Voir le code sur GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </article>
+
+                <!-- Projet 2 : Deep Learning -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/DL.jpg"
+                            alt="Illustration des fondements du Deep Learning et des réseaux de neurones"
+                            loading="lazy"
+                            width="800"
+                            height="450"
+                        >
+                    </div>
+
+                    <div class="project-top">
+                        <span class="project-number">PROJET 02</span>
+                        <span class="project-category">Deep Learning</span>
+                    </div>
+
+                    <h3>Fondements du Deep Learning</h3>
+
+                    <p>
+                        Étude et implémentation des fondements des
+                        réseaux de neurones : neurones artificiels,
+                        initialisation des poids et fonctions
+                        d'activation. Une démarche progressive
+                        pour comprendre les mécanismes mathématiques
+                        du Deep Learning.
+                    </p>
+
+                    <div class="tags" aria-label="Technologies utilisées">
+                        <span>Python</span>
+                        <span>NumPy</span>
+                        <span>Mathématiques</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/AlfouDiallo99/Deep-Learning-Foundations"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Explorer le dépôt Deep Learning Foundations sur GitHub"
+                    >
+                        Explorer le dépôt
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </article>
+
+                <!-- Projet 3 : Credit Scoring -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/credit_scoring.png"
+                            alt="Visualisation des résultats du projet de prédiction du risque de crédit"
+                            loading="lazy"
+                            width="800"
+                            height="450"
+                        >
+                    </div>
+
+                    <div class="project-top">
+                        <span class="project-number">PROJET 03</span>
+                        <span class="project-category">Machine Learning</span>
+                    </div>
+
+                    <h3>Prédiction du risque de crédit</h3>
+
+                    <p>
+                        Projet de classification visant à exploiter
+                        des données pour étudier le risque de crédit.
+                        Il permet de mettre en pratique la préparation
+                        des données, l'entraînement de modèles et
+                        la comparaison de leurs performances.
+                    </p>
+
+                    <div class="tags" aria-label="Technologies utilisées">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-learn</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/AlfouDiallo99/credit-scoring-ml"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Voir le projet de prédiction du risque de crédit sur GitHub"
+                    >
+                        Voir le code sur GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </article>
+
+                <!-- Projet 4 : Machine Learning from Scratch -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/ML.jpg"
+                            alt="Illustration conceptuelle du Machine Learning et des algorithmes d'apprentissage automatique"
+                            loading="lazy"
+                            width="800"
+                            height="450"
+                        >
+                    </div>
+
+                    <div class="project-top">
+                        <span class="project-number">PROJET 04</span>
+                        <span class="project-category">Algorithmes de ML</span>
+                    </div>
+
+                    <h3>Machine Learning from Scratch</h3>
+
+                    <p>
+                        Travail d'apprentissage consacré à la
+                        compréhension et à l'implémentation
+                        d'algorithmes de Machine Learning.
+                        L'objectif est de mieux comprendre
+                        leur fonctionnement avant d'utiliser
+                        des bibliothèques spécialisées.
+                    </p>
+
+                    <div class="tags" aria-label="Technologies utilisées">
+                        <span>Python</span>
+                        <span>NumPy</span>
+                        <span>Machine Learning</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/AlfouDiallo99/Full_Ml_from_Scratch"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Explorer le dépôt Full ML from Scratch sur GitHub"
+                    >
+                        Explorer le dépôt
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </article>
+
+                <!-- Projet 5 : Oracle APEX -->
+                <article class="project-card">
+
+                    <div class="project-image">
+                        <img
+                            src="images/management.png"
+                            alt="Visuel du projet universitaire de gestion développé avec Oracle APEX"
+                            loading="lazy"
+                            width="800"
+                            height="450"
+                        >
+                    </div>
+
+                    <div class="project-top">
+                        <span class="project-number">PROJET 05</span>
+                        <span class="project-category">Développement logiciel</span>
+                    </div>
+
+                    <h3>Application de gestion Oracle APEX</h3>
+
+                    <p>
+                        Projet universitaire de gestion reposant
+                        sur une base de données relationnelle et
+                        une interface applicative. Il mobilise
+                        Oracle APEX, SQL et PL/SQL dans un contexte
+                        de développement de systèmes d'information.
+                    </p>
+
+                    <div class="tags" aria-label="Technologies utilisées">
+                        <span>Oracle APEX</span>
+                        <span>SQL</span>
+                        <span>PL/SQL</span>
+                    </div>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/AlfouDiallo99/oracle-apex-business-management"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Voir le projet universitaire Oracle APEX sur GitHub"
+                    >
+                        Voir le projet
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+            <div class="projects-footer">
+                <a
+                    href="https://github.com/AlfouDiallo99"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    Découvrir tous mes dépôts
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. COMPÉTENCES -->
+    <section
+        id="competences"
+        class="section"
+        aria-labelledby="skills-title"
+    >
+        <div class="wrap">
+
+            <div class="section-heading">
+                <p class="eyebrow">OUTILS ET TECHNOLOGIES</p>
+
+                <h2 id="skills-title">
+                    Mes <span>compétences</span>
+                </h2>
+
+                <p class="section-intro">
+                    Les langages, outils et domaines que j'utilise
+                    ou que j'approfondis dans ma formation.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skills-card">
+                    <div class="skills-card-header">
+                        <span class="skills-index">01</span>
+                        <h3>Programmation</h3>
+                    </div>
+
+                    <ul class="skills-list">
+                        <li><span>Python</span></li>
+                        <li><span>C / C++</span></li>
+                        <li><span>Java</span></li>
+                        <li><span>HTML</span></li>
+                        <li><span>JavaScript</span></li>
+                    </ul>
+                </article>
+
+                <article class="skills-card">
+                    <div class="skills-card-header">
+                        <span class="skills-index">02</span>
+                        <h3>Données et outils</h3>
+                    </div>
+
+                    <ul class="skills-list">
+                        <li><span>SQL</span></li>
+                        <li><span>PostgreSQL</span></li>
+                        <li><span>NumPy</span></li>
+                        <li><span>Pandas</span></li>
+                        <li><span>Git / GitHub</span></li>
+                    </ul>
+                </article>
+
+                <article class="skills-card">
+                    <div class="skills-card-header">
+                        <span class="skills-index">03</span>
+                        <h3>IA et développement</h3>
+                    </div>
+
+                    <ul class="skills-list">
+                        <li><span>Scikit-learn</span></li>
+                        <li><span>Machine Learning</span></li>
+                        <li><span>Deep Learning — en apprentissage</span></li>
+                        <li><span>Oracle APEX</span></li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONTACT -->
+    <section
+        id="contact"
+        class="section contact-section"
+        aria-labelledby="contact-title"
+    >
+        <div class="wrap">
+
+            <div class="contact-panel">
+                <p class="eyebrow">ENTRONS EN CONTACT</p>
+
+                <h2 id="contact-title">
+                    Une idée, un projet ou une
+                    <span>collaboration ?</span>
+                </h2>
+
+                <p class="contact-description">
+                    Je suis ouvert aux échanges autour de
+                    l'informatique, du Machine Learning,
+                    du Deep Learning et de la recherche
+                    en intelligence artificielle.
+                </p>
+
+                <a
+                    href="mailto:housseindiallo61@gmail.com"
+                    class="btn btn-primary"
+                >
+                    M'envoyer un e-mail
+                    <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- E-mail -->
+                <a
+                    class="contact-card"
+                    href="mailto:housseindiallo61@gmail.com"
+                >
+                    <span class="contact-icon" aria-hidden="true">@</span>
+
+                    <span class="contact-card-text">
+                        <span class="contact-label">E-mail</span>
+                        <span class="contact-value">
+                            housseindiallo61@gmail.com
+                        </span>
+                    </span>
+
+                    <span class="contact-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a
+                    class="contact-card"
+                    href="https://www.linkedin.com/in/houssein-diallo-20b349339/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="contact-icon linkedin-icon" aria-hidden="true">in</span>
+
+                    <span class="contact-card-text">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">
+                            Mon profil professionnel
+                        </span>
+                    </span>
+
+                    <span class="contact-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <!-- GitHub -->
+                <a
+                    class="contact-card"
+                    href="https://github.com/alfouDiallo99"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span class="contact-icon github-icon" aria-hidden="true">&lt;/&gt;</span>
+
+                    <span class="contact-card-text">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">Mes projets et mon code</span>
+                    </span>
+
+                    <span class="contact-arrow" aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- PIED DE PAGE -->
+<footer class="site-footer">
+
+    <div class="wrap footer-content">
+
+        <a href="#accueil" class="footer-brand">
+            Alfousseyny<span>.</span>
+        </a>
+
+        <p class="footer-copy">
+            © <span id="current-year">2026</span>
+            Alfousseyny Diallo. Tous droits réservés.
+        </p>
+
+        <nav
+            class="footer-socials"
+            aria-label="Réseaux sociaux et contact"
+        >
+            <a
+                href="https://github.com/alfouDiallo99"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter mon profil GitHub"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/houssein-diallo-20b349339/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Consulter mon profil LinkedIn"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="mailto:housseindiallo61@gmail.com"
+                aria-label="M'envoyer un e-mail"
+            >
+                E-mail
+            </a>
+        </nav>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
